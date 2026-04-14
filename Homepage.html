@@ -16,6 +16,10 @@
             background-color: #f5f5f5;
             line-height: 1.6;
             height: 1000px;
+            background-image: url("background.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         .header {
@@ -29,20 +33,27 @@
         .nav {
             background-color: #34495e;
             overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
-            .nav a {
-                float: left;
-                color: white;
-                padding: 14px 20px;
-                text-decoration: none;
-                text-align: center;
-            }
+        .logo {
+            height: 40px;
+            margin: 5px 15px;
+        }
 
-                .nav a:hover {
-                    background-color: #ddd;
-                    color: black;
-                }
+        .nav a {
+            float: left;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+            .nav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
         .row::after {
             content: "";
@@ -108,28 +119,33 @@
     </style>
 
     <script>
-function showWelcome() {
-    alert("Welcome to Electric Car Purchase Platform!");
-}
+        function showWelcome() {
+            alert("Welcome to Electric Car Purchase Platform!");
+        }
 
-function updateTitle() {
-    document.getElementById("mainTitle").innerHTML = "Popular Tesla Electric Cars";
-}
+        function showTip() {
+            alert("Please log in for more car information!");
+        }
     </script>
 </head>
 
 <body onload="showWelcome()">
     <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="seller-register.html">Seller Register</a>
-        <a href="Coursework Project1.html">Publish Car</a>
-        <a href="search.html">Search</a>
+        <img src="logo.jpeg" class="logo" alt="Logo">
+        <a href="Homepage.html">Homepage</a>
+        <a href="Registration.html">Registration</a>
+        <a href="Login.html" onclick="showTip()">Log in</a>
+        <a href="Add car.html">Add Car</a>
+        <a href="Search Page.html">Search</a>
     </div>
 
     <div class="header">
         <h1>Welcome to Electric Car Platform</h1>
         <p>New & Used Electric Vehicles · One-Stop Service</p>
+        <p style="font-size:15px; margin-top:8px; font-weight:normal;">
+            Our platform provides high-quality new and used electric cars with honest prices and trusted services.
+            We aim to make eco-friendly driving easy and affordable for every customer.
+        </p>
     </div>
 
     <div class="row">
@@ -145,19 +161,15 @@ function updateTitle() {
         <div class="col-6">
             <div class="card">
                 <h2 id="mainTitle" style="text-align:center; margin-bottom:15px;">Popular Electric Cars</h2>
-
-                <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                <img src="Tesla Model 3.png"
                      class="car-img" alt="Tesla Model 3">
                 <h3>Tesla Model 3</h3>
                 <p>Price: $38,990 | Mileage: 12,500 mi | Auto Pilot</p>
-
                 <br>
-                <img src="https://images.unsplash.com/photo-1619767886558-ef62e4feff6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                <img src="Tesla Model Y.png"
                      class="car-img" alt="Tesla Model Y">
                 <h3>Tesla Model Y</h3>
                 <p>Price: $45,990 | Mileage: 8,300 mi | Long Range</p>
-
-                <button class="btn" onclick="updateTitle()">Click to Change Title</button>
             </div>
         </div>
 
